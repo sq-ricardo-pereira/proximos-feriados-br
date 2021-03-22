@@ -1,4 +1,4 @@
-import fetch from 'node-fetch';
+const fetch = require('node-fetch');
 
 async function consomeAPI (ano) {
     try {
@@ -68,7 +68,7 @@ function constroiRequest(ano) {
     return `https://date.nager.at/api/v2/PublicHolidays/${ano}/BR`;
 }
 
-export function proximosFeriados (n = 1) {
+module.exports = function proximosFeriados (n = 1) {
     const num = (parseInt(n) > 0) ? (parseInt(n)) : 1;
 
     const d = new Date();
